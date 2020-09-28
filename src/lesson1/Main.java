@@ -57,10 +57,10 @@ public class Main {
     //Задание 8
     static void year(int a) {
         if (((a % 100 == 0) && (a % 400 != 0)) || (a % 4 != 0)) {
-            System.out.println(a + "год не високосный");
+            System.out.println(a + " год не високосный");
         }
         else {
-            System.out.println( a + "год високосный");
+            System.out.println(a + " год високосный");
         }
     }
 }
