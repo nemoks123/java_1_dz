@@ -55,7 +55,7 @@ public class Main1 {
                 System.out.print(d[i][j] + " ");
             }
         }
-        System.out.println( );
+        System.out.println();
         //Задание 5
         int[] e = new int[n];
         int min = 0 ;
