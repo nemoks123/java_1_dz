@@ -58,7 +58,7 @@ public class MainApp {
         //Задание 5
         int[] e = new int[n];
         int min = 0 ;
-        int max  = 0;
+        int max  = 0  ;
         for (int i = 0; i <n ; i++) {
             e[i] = (int) Math.round(Math.random() * 100);
             System.out.print(e[i] + " ");
