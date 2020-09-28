@@ -10,7 +10,7 @@ public class Main1 {
             a[i] = (int) Math.round(Math.random());
             System.out.print(a[i] + " ");
         }
-        System.out.println();
+        System.out.println(   );
         for (int i = 0; i < n; i++) {
             if (a[i] == 0) {
                 a[i] = 1;
