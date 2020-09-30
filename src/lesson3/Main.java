@@ -37,8 +37,15 @@ public class Main {
                     break;
                 } else {
                     for (int i = 0; i < answer.length(); i++) {
-                        if(answer.charAt(i) == words[n].charAt(i)){
-                        str = changeCharInPosition(i, answer.charAt(i), str);
+                        for (int j = 0; j < words[n].length() ; j++) {
+                            if(i ==j) {// второй массив сделан для того, если вдруг слово будет введено
+                                // слишком большое
+                                if (answer.charAt(i) == words[n].charAt(i))
+                                    str = changeCharInPosition(i, answer.charAt(i), str);
+                            }
+                        }
+
+
                         }
 
                     }
@@ -46,7 +53,7 @@ public class Main {
 
                         System.out.println("Введенные правильно символы: " + str);
                 }
-            } while (answer  != words[n]);
+        while (answer  != words[n]);
 
         }
     }
