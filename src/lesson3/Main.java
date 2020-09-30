@@ -34,6 +34,7 @@ public class Main {
                     tmp = sc.nextInt();
                     break;
                 } else {
+
                     answer1 += words[n].charAt(number);
                     if(answer1.equals(words[n])){
                         System.out.println("Вы проиграли! \n" +
