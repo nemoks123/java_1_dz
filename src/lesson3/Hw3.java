@@ -31,7 +31,7 @@ public class Hw3 {
                         tmp = sc.nextInt();
                         break;
                     }
-                    if(answer < question) {
+                         if (answer < question) {
                         temp--;
                         System.out.println("искомое число больше, попробуйте еще раз \n" +
                                 "У вас осталось " + temp + " попыток");
