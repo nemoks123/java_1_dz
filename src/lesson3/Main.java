@@ -46,7 +46,7 @@ public class Main {
 
                         System.out.println("Введенные правильно символы: " + str);
                 }
-            } while (answer != words[n]);
+            } while (answer  != words[n]);
 
         }
     }
