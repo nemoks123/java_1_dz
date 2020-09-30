@@ -29,7 +29,7 @@ public class Main {
             System.out.println("Загадано слово из вышеперечсленных \n Угадайте какое ");
             String answer = "";
             do {
-                answer = sc.next();
+                answer = sc.next(); // Чтобы человек мог ввести сразу несколько слов
                 if (answer.equals(words[n])) {
                     System.out.println("Вы отгадали слово! \n Для того чтобы начать сначала нажмите 1" +
                             " , длы выхода 0");
