@@ -1,5 +1,6 @@
 package lesson3;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -16,15 +17,16 @@ public class Main {
         int tmp = 1;
         int number ;
 
-
-
-        String answer1;
+//        StringBuilder answer1 = new StringBuilder("%%%%%%%%%%%%%%%");
+        String str ;
+      //  String answer1;
         while (tmp == 1) {
-
+            str = "%%%%%%%%%%%%%%%";
+            System.out.println(Arrays.toString(words));
             number = 0;
-            answer1 = "";
+          //  answer1 = "";
             int n = random.nextInt(words.length);
-            System.out.println("Загадано слово \n Угадайте какое ");
+            System.out.println("Загадано слово из вышеперечсленных \n Угадайте какое ");
             String answer = "";
             do {
                 answer = sc.next();
@@ -34,24 +36,24 @@ public class Main {
                     tmp = sc.nextInt();
                     break;
                 } else {
-
-                    answer1 += words[n].charAt(number);
-                    if(answer1.equals(words[n])){
-                        System.out.println("Вы проиграли! \n" +
-                                "Загаданное слово " + answer1 + "\n Для того чтобы начать сначала нажмите 1" +
-                                " для выхода нажмите 0");
-                        tmp = sc.nextInt();
-                        break;
-                    }else{
-                    System.out.println("Вы ввели неверное слово попробуйте еще раз!");
-
-                    System.out.println(answer1);
-                    number ++;
+                    for (int i = 0; i < answer.length(); i++) {
+                        if(answer.charAt(i) == words[n].charAt(i)){
+                        str = changeCharInPosition(i, answer.charAt(i), str);
+                        }
 
                     }
+                         System.out.println("Вы ввели неверное слово попробуйте еще раз!");
+
+                        System.out.println("Введенные правильно символы: " + str);
                 }
             } while (answer != words[n]);
+
         }
+    }
+    public static String changeCharInPosition(int position, char ch, String str){
+        char[] charArray = str.toCharArray();
+        charArray[position] = ch;
+        return new String(charArray);
     }
 
 
