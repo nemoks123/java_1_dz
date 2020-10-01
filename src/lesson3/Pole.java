@@ -57,7 +57,7 @@ public class Pole {
                 {
                     System.out.println("Говорите слово");
                     answer = sc.next();
-                    System.out.println(Slovo(answer,words[n]));
+                    System.out.println(Slovo(answer,words[n], igroki));
                     tmp = sc.next();
                     break;
                 }
@@ -94,10 +94,10 @@ public class Pole {
         else return str ;
 
     }
-    public static String Slovo(String answer, String word)
+    public static String Slovo(String answer, String word,int igrok)
     {
         if (answer.equals(word)) {
-            return "Вы отгадали слово! \n Хотите сыграть еще раз?";
+            return "Игрок" + igrok + "отгадал слово! \n Хотите сыграть еще раз?";
 
         } else {
             return "К сожалению вы не отгадали слово и проиграли,\n" +
