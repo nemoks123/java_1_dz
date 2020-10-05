@@ -9,7 +9,7 @@ public class Pole {
 
     static Scanner sc = new Scanner(System.in);
     static Random random = new Random();
-
+    static StringBuffer output = new StringBuffer();
     public static void main(String[] args) throws IOException {
         String[] words = {"apple", "orange", "lemon", "banana", "apricot", "avocado",
                 "broccoli", "carrot", "cherry", "garlic", "grape", "melon", "leak", "kiwi",
@@ -28,6 +28,7 @@ public class Pole {
             System.out.println(Arrays.toString(words));
 
             int n = random.nextInt(words.length);
+            StringBuffer str2 = new StringBuffer(words[n].length());
             int igroki = 1 ;
 
             System.out.println("Мы загадали для вас одно из вышеперечисленных слов" +
@@ -42,7 +43,8 @@ public class Pole {
             {
                 System.out.println("Говорите букву");
                ch = (char) System.in.read() ;
-                str1 = Symbol(ch,words[n],str );
+                str1 = Symbol(ch,words[n],str,str2);
+
                 if (str1.equals(str))
                 {
                     System.out.println("Вашей буквы нет в слове");
@@ -52,6 +54,13 @@ public class Pole {
                 }else {
                     System.out.println("Вы отгадали букву\n" + str1);
                     str = str1;
+
+                    if(str2.equals(words[n]))
+                    {
+
+                        System.out.println("Победа игрока номер " + igroki);
+                        break;
+                    }
                 }
             } else if (answer1.equals("слово"))
                 {
@@ -74,7 +83,7 @@ public class Pole {
         charArray[position] = ch;
         return new String(charArray);
     }
-    public static String Symbol(char symbol,String word,String str )
+    public static String Symbol(char symbol,String word,String str,StringBuffer str2 )
     {
 
         int temp = 0;
@@ -84,7 +93,11 @@ public class Pole {
                     if ( word.charAt(j) == symbol) {
                         str = changeCharInPosition(j, word.charAt(j), str);
                         temp++;
+                        str2.insert(j,word.charAt(j));
+
                     }
+                    else
+                        str2.insert(j,'%');
                 }
             }
         if(temp == 0)
