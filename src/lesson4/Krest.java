@@ -3,6 +3,8 @@ package lesson4;
 import javax.swing.*;
 import java.util.Random;
 import java.util.Scanner;
+//все выглядит хуже некуда но для второго задания работает, тип работает если нужно собрать все элементы
+// типо 3 из 3 или на 1 меньше, если делать на 2 меньше(3 из 5), то мне потребуется еще миллион кривого кода
 
 public class Krest {
     static final int SIZE = 5;
@@ -125,13 +127,27 @@ public class Krest {
     }
 
     static boolean checkWin(char c) {
+        for (int i = 0; i < SIZE; i++) {
 
+            int tmp4 = 1;
+            int tmp5 = 1;
+            for (int j = 0; j < SIZE - 2; j++) {
+                if (map[j][j + 1] == c && map[j + 1][j + 2] == c) {
+                    tmp4++;
+                }
+                if (map[j + 1][j ] == c && map[j + 2][j + 1] == c) {
+                    tmp5++;
+                }
+            }
+            if (tmp4 == SIZE - 1  || tmp5 == SIZE)
+                return true;
+        }
         for (int i = 0; i < SIZE; i++) {
             int tmp = 1;
             int tmp1 = 1;
             int tmp2 = 1;
             int tmp3 = 1;
-            int tmp4 = 1;
+
             for (int j = 0; j < SIZE - 1; j++) {
                 if (map[i][j] == c && map[i][j + 1] == c) {
                     tmp++;
@@ -141,14 +157,14 @@ public class Krest {
                     tmp2++;
                 } else if (map[SIZE - j - 1][j] == c) {
                     tmp3++;
-                }// else if (map[j][j + 1] == c && map[j + 1][SIZE] == c){
-                   // tmp4++;
+                } // if (map[j][j + 1] == c && map[j + 1][SIZE] == c){
+                // tmp4++;
                 // }
-                    // когда полностью собрать типо 3 из 3
-            //        if (tmp1 == SIZE || tmp == SIZE  || tmp2 == SIZE  || tmp3 == SIZE )
-            //            return  true
-                        // когда без 4 из 5
-                if (tmp1 == SIZE - 1 || tmp == SIZE - 1 || tmp2 == SIZE - 1 || tmp3 == SIZE - 1 || tmp4 ==SIZE -1)
+                // когда полностью собрать типо 3 из 3
+                        if (tmp1 == SIZE || tmp == SIZE  || tmp2 == SIZE  || tmp3 == SIZE  )
+                           return  true;
+                // когда без 4 из 5
+                if ( tmp1 == SIZE - 1 || tmp == SIZE - 1 || tmp2 == SIZE - 1 || tmp3 == SIZE - 1 )
                     return true;
 
 
