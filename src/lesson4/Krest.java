@@ -7,7 +7,7 @@ import java.util.Scanner;
 // типо 3 из 3 или на 1 меньше, если делать на 2 меньше(3 из 5), то мне потребуется еще миллион кривого кода
 
 public class Krest {
-    static final int SIZE = 5;
+    static final int SIZE = 3;
     static final char DOT_X = 'X';
     static final char DOT_O = 'O';
     static final char DOT_EMPTY = '.';
@@ -164,8 +164,8 @@ public class Krest {
                         if (tmp1 == SIZE || tmp == SIZE  || tmp2 == SIZE  || tmp3 == SIZE  )
                            return  true;
                 // когда без 4 из 5
-                if ( tmp1 == SIZE - 1 || tmp == SIZE - 1 || tmp2 == SIZE - 1 || tmp3 == SIZE - 1 )
-                    return true;
+         //       if ( tmp1 == SIZE - 1 || tmp == SIZE - 1 || tmp2 == SIZE - 1 || tmp3 == SIZE - 1 )
+           //         return true;
 
 
             }
