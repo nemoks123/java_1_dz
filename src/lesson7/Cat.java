@@ -19,15 +19,15 @@ public class Cat {
         return name;
     }
 
-    public void setSatiety(boolean satiety) {
-        this.satiety = satiety;
-    }
+
 
     public void eat(Plate plate){
         System.out.println("Cat " + name + " try eat... ");
         plate.decrease(this);
     }
-
+    public void satietyAfterEat(){
+        this.satiety = true;
+    }
     @Override
     public String toString() {
         return "Cat{" +

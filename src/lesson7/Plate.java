@@ -16,7 +16,7 @@ public class Plate {
             System.out.println("Cat " + cat.getName() + " не сможет наестся, поэтому не ест");
             food +=cat.getQuantity();
         }else {
-            cat.setSatiety(true);
+            cat.satietyAfterEat();
         }
     }
     public void additionFood(int amount){
